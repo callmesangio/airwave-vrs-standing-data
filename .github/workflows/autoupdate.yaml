@@ -1,3 +1,4 @@
+name: Update standing data
 on:
   schedule:
     - cron: "11 * * * *"
