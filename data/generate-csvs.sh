@@ -38,5 +38,22 @@ echo $AIRPORT_HEADER > $TMPDIR/header-airports.csv
 cat $TMPDIR/airports.csv >> $TMPDIR/header-airports.csv
 mv $TMPDIR/header-airports.csv $TMPDIR/airports.csv
 
+# aircraft
+
+for file in $(find $GITREPO/aircraft -name '*.csv'); do
+    # Remove the first line
+    cat $file | tail -n +2 >> $TMPDIR/aircraft.csv
+    # If AIRCRAFT_HEADER is not set,
+    if [ -z "$AIRCRAFT_HEADER" ]; then
+        # Set it to the first line
+        AIRCRAFT_HEADER=$(head -n 1 $file)
+    fi
+done
+# Add the header to the top of the file
+echo $AIRCRAFT_HEADER > $TMPDIR/header-aircraft.csv
+cat $TMPDIR/aircraft.csv >> $TMPDIR/header-aircraft.csv
+mv $TMPDIR/header-aircraft.csv $TMPDIR/aircraft.csv
+
 mv $TMPDIR/routes.csv $THIS_DIR/routes.csv
 mv $TMPDIR/airports.csv $THIS_DIR/airports.csv
+mv $TMPDIR/aircraft.csv $THIS_DIR/aircraft.csv
