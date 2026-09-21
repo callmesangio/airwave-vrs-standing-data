@@ -16,7 +16,5 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Generate CSVs
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           bash generate-csvs.sh
