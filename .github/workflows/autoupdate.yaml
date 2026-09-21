@@ -13,9 +13,6 @@ on:
       - main
 permissions:
   contents: write
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
 jobs:
   keepalive-job:
     name: Keepalive Workflow
