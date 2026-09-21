@@ -35,13 +35,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           bash data/generate-csvs.sh
-      - name: Copy LICENSE and README to data
-        run: |
-          cp LICENSE README.md data/
-      - name: Generate Directory Listings
-        uses: jayanta525/github-pages-directory-listing@v2.0.0
-        with:
-          FOLDER: data
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
