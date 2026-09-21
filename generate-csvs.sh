@@ -1,5 +1,5 @@
 #!/bin/bash
-set -ex
+set -e
 TMPDIR=$(mktemp -d)
 GITREPO=$(mktemp -d)
 THIS_DIR=$(dirname $0)
