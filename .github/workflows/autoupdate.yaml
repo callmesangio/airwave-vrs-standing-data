@@ -6,11 +6,8 @@
 
 on:
   schedule:
-    - cron: '11 * * * *'
-  # and on puzh
-  push:
-    branches:
-      - main
+    - cron: "11 * * * *"
+  workflow_dispatch:
 permissions:
   contents: write
 jobs:
