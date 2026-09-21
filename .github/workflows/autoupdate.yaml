@@ -14,13 +14,6 @@ on:
 permissions:
   contents: write
 jobs:
-  keepalive-job:
-    name: Keepalive Workflow
-    runs-on: ubuntu-latest
-    permissions:
-      actions: write
-    steps:
-      - uses: actions/checkout@v4
   update:
     runs-on: ubuntu-latest
     steps:
