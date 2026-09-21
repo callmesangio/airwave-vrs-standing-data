@@ -1,15 +1,19 @@
 name: Update standing data
+
 on:
   schedule:
     - cron: "11 * * * *"
   workflow_dispatch:
+
 permissions:
   contents: write
+
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
       - name: Generate CSVs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
