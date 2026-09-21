@@ -54,6 +54,6 @@ echo $AIRCRAFT_HEADER > $TMPDIR/header-aircraft.csv
 cat $TMPDIR/aircraft.csv >> $TMPDIR/header-aircraft.csv
 mv $TMPDIR/header-aircraft.csv $TMPDIR/aircraft.csv
 
-mv $TMPDIR/routes.csv $THIS_DIR/routes.csv
-mv $TMPDIR/airports.csv $THIS_DIR/airports.csv
-mv $TMPDIR/aircraft.csv $THIS_DIR/aircraft.csv
+mv $TMPDIR/routes.csv $THIS_DIR/csv/routes.csv
+mv $TMPDIR/airports.csv $THIS_DIR/csv/airports.csv
+mv $TMPDIR/aircraft.csv $THIS_DIR/csv/aircraft.csv
