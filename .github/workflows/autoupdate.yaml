@@ -18,3 +18,21 @@ jobs:
       - name: Generate CSVs
         run: |
           bash generate-csvs.sh
+
+      - name: Check for changes
+        id: gd
+        run: |
+          changed=0
+          git diff --quiet || changed=$?
+          echo "changed=$changed" >> "$GITHUB_OUTPUT"
+
+      - name: Commit and push
+        if: steps.gd.outputs.changed != '0'
+        run: |
+          name='github-actions[bot]'
+          email='41898282+github-actions[bot]@users.noreply.github.com'
+
+          git add .
+          git -c user.name="$name" -c user.email="$email" \
+            commit -m "Update standing data"
+          git push
