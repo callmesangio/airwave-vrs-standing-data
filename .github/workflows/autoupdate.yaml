@@ -1,6 +1,6 @@
 # This workflow is triggered every hour
 # and runs:
-# bash generate-csvs.sh && python generate-jsons.py
+# bash generate-csvs.sh
 # to update the data files
 # and then commits the changes to the repo
 
@@ -63,9 +63,6 @@ jobs:
           chmod +x /usr/local/bin/github-release
           VERSION=$(date +%Y%m%d.%H.%M)
           github-release adsblol/vrs-standing-data $(date +%s) main "$(date +%s)" "data/*csv.gz"
-      - name: Generate JSONs
-        run: |
-          python data/generate-jsons.py
       - name: Copy LICENSE and README to data
         run: |
           cp LICENSE README.md data/
