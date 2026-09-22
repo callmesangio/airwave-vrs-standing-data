@@ -2,7 +2,7 @@ name: Update standing data
 
 on:
   schedule:
-    - cron: "11 * * * *"
+    - cron: "16 */6 * * *"
   workflow_dispatch:
 
 permissions:
@@ -15,7 +15,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      - name: Generate CSVs
+      - name: Generate CSV files
         run: |
           bash generate.sh
 
